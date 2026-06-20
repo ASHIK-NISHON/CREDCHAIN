@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  🌐 <strong>Live Demo:</strong> https://credblock.vercel.app/<br/>
+  🌐 <strong>Live Demo:</strong> https://credblock.vercel.app<br/>
   ⚠️ <strong>Status:</strong> Beta Version
 </p>
 
@@ -136,7 +136,7 @@ Example:
 
 ## 🔗 Quick Links
 
-- 🌐 **Live App:** https://credchain-frontend-7eij.vercel.app
+- 🌐 **Live App:** https://credblock.vercel.app
 - 📖 **TestNet Faucet:** https://bank.testnet.algorand.network
 - 🔑 **Get Lute Wallet:** https://lute Wallet
 
@@ -159,7 +159,7 @@ Example:
 
 ### As an Issuer
 
-1. Go to https://credchain-frontend-7eij.vercel.app
+1. Go to https://credblock.vercel.app
 2. Connect your wallet (Lute required for registration)
 3. Complete issuer verification
 4. Start issuing credentials
@@ -174,12 +174,6 @@ Example:
 
 1. Scan a QR code or click a verification link
 2. See instant result — no login needed!
-
----
-
-## 📄 License
-
-ISC License
 
 ---
 
