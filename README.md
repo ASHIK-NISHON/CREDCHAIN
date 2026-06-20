@@ -1,65 +1,108 @@
-# 🚀 CredChain
+# 🚀 Credblock
 
-### Blockchain-Verified Credentials on Algorand
+### Verified credentials, privacy control, and instant trust on Algorand
 
 ---
 
 <p align="center">
-  <strong>Issue, receive, and verify tamper-proof academic credentials as NFTs.</strong><br/>
-  No more fake diplomas. No more verification delays.
+  <strong>Issue, claim, share, and verify academic credentials with blockchain trust and student control.</strong><br/>
+  Fake credentials are blocked instantly, and students keep privacy through claim acceptance.
 </p>
 
 <p align="center">
-  🌐 <strong>Live Demo:</strong> https://credchain-frontend-7eij.vercel.app<br/>
+  🌐 <strong>Live Demo:</strong> https://credblock.vercel.app/<br/>
   ⚠️ <strong>Status:</strong> Beta Version
 </p>
 
 ---
 
-## 🎯 What is CredChain?
+## 🎯 What is Credblock?
 
-CredChain is a decentralized credential verification system that transforms academic certificates into **non-fungible tokens (NFTs)** on the Algorand blockchain.
+Credblock is an academic credential platform that combines:
+
+- Algorand NFT credential issuance,
+- IPFS certificate metadata storage,
+- and trusted verification using Credblock’s backend database.
+
+Credblock stores every issued credential record in its database, so shared credentials can be verified instantly. If a credential was never issued through Credblock, it is rejected as **NOT VERIFIED** immediately.
 
 ### The Problem ❌
 
-- Fake diplomas that can't be verified
-- Weeks of waiting for background checks
-- Paper certificates that get lost or damaged
-- No proof of ownership for students
+- Fake diplomas and unverifiable certificates
+- Slow employer verification processes
+- Paper credentials that are lost, altered, or forged
+- Students forced to accept credentials without consent
 
 ### The Solution ✅
 
-- Every credential is an **NFT** — can't be forged
-- **Instant verification** — seconds, not weeks
-- Students **own** their credentials forever
-- Stored securely on Algorand blockchain
+- Credentials are minted as **ARC-3 NFTs** on Algorand
+- Issuers register and save issued credential records in Credblock’s database
+- Students choose whether to accept or decline credential claims
+- Issuers can revoke or burn credentials to invalidate them
+- Shared credentials are verified instantly against Credblock’s DB and the blockchain
 
 ---
 
-## 💡 How It Works
+## 💡 How Credblock Works
 
-### For Universities (Issuers)
+### Issuer Flow
 
-1. **Register** as an issuer (one-time, takes 30 seconds)
-2. **Upload** a certificate (PDF or image)
-3. **Enter** student details and dates
-4. **Mint** — Credential becomes an NFT on Algorand
-5. **Share** — Student gets a claim link or QR code
+1. **Register** as an issuer with a wallet (Lute supports message signing).
+2. **Upload** a certificate file (PDF or image).
+3. **Enter** student information and issuance details.
+4. **Mint** the credential as an Algorand NFT.
+5. **Store** the issued credential record in Credblock’s database.
+6. **Share** a claim link or QR code with the student.
+7. **Revoke / Burn** the credential later if it should no longer be valid.
 
-### For Students
+### Student Flow
 
-1. **Receive** a claim link from issuer
-2. **View** credential details before accepting
-3. **Claim** — Opt-in and receive the NFT
-4. **Own** — Credential lives in your wallet forever
-5. **Share** — Generate QR or link to prove authenticity
+1. **Receive** a claim link or QR code from the issuer.
+2. **Preview** the credential details before accepting.
+3. **Claim** the credential by connecting your wallet.
+4. **Own** the NFT in your wallet after accepting.
+5. **Decline** the claim if you want to keep it private.
+6. **Share** the same verification link or QR code when needed.
+
+### Privacy and Control
+
+- Students control whether a credential enters their wallet.
+- If the student declines, Credblock does not force the credential into their wallet.
+- Issuers can revoke or burn credentials to prevent future verification.
+- Shared credentials are only valid if they were actually issued and stored by Credblock.
+
+### Sharing and Verification
+
+- The issuer mints the credential and stores its metadata on IPFS.
+- Credblock also saves the issued credential record in its backend database.
+- A claim link or QR code is generated for the student.
+- When a verifier opens the link, Credblock checks:
+  1. Is the credential present in Credblock’s DB?
+  2. Is the issuer valid?
+  3. Is the NFT valid on Algorand?
+  4. Has it been revoked or burned?
+
+- If the credential exists in the DB and passes the blockchain checks: **VERIFIED**
+- If the credential is missing: **NOT VERIFIED**
+- If the credential was revoked or burned: **REVOKED**
+
+### Fake Credential Protection
+
+Because Credblock stores every issued credential record, fake credentials are rejected instantly.
+
+Example:
+
+- Issuer issues credential `12345` and Credblock stores it in the DB.
+- Student receives a claim link for `12345`.
+- Employer scans the link → Credblock finds the record and returns ✅ VERIFIED.
+- A forged credential `99999` is scanned → Credblock does not find it and returns ⚠️ NOT VERIFIED instantly.
 
 ### For Employers (Verifiers)
 
 1. **Scan** a QR code or click a link
-2. **See** instant verification result:
+2. **See** the verification result:
    - ✅ VERIFIED — Credential is valid
-   - ❌ REVOKED — Credential was revoked
+   - ❌ REVOKED — Credential was revoked or burned
    - ⚠️ INVALID — Credential not found
 
 **No login required** to verify — anyone can check!
