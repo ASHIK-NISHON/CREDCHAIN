@@ -52,17 +52,17 @@ Credblock stores every issued credential record in its database, so shared crede
 3. **Enter** student information and issuance details.
 4. **Mint** the credential as an Algorand NFT.
 5. **Store** the issued credential record in Credblock’s database.
-6. **Share** a claim link or QR code with the student.
+6. **Send** a credential claim request to the student, who can then claim or decline it.
 7. **Revoke / Burn** the credential later if it should no longer be valid.
 
 ### Student Flow
 
-1. **Receive** a claim link or QR code from the issuer.
+1. **Receive** a credential claim request from the issuer.
 2. **Preview** the credential details before accepting.
 3. **Claim** the credential by connecting your wallet.
 4. **Own** the NFT in your wallet after accepting.
 5. **Decline** the claim if you want to keep it private.
-6. **Share** the same verification link or QR code when needed.
+6. **Share** the verification link or QR code when needed.
 
 ### Privacy and Control
 
@@ -75,14 +75,17 @@ Credblock stores every issued credential record in its database, so shared crede
 
 - The issuer mints the credential and stores its metadata on IPFS.
 - Credblock also saves the issued credential record in its backend database.
-- A claim link or QR code is generated for the student.
+- A credential claim request is sent to the student for review and action.
 - When a verifier opens the link, Credblock checks:
   1. Is the credential present in Credblock’s DB?
   2. Is the issuer valid?
   3. Is the NFT valid on Algorand?
   4. Has it been revoked or burned?
 
-- If the credential exists in the DB and passes the blockchain checks: **VERIFIED**
+- If the credential exists in the DB and passes the blockchain checks, the verifier sees a **verified** status message or badge (similar to the verified image shown in the app).
+
+  ![Verified credential status](verified.png)
+
 - If the credential is missing: **NOT VERIFIED**
 - If the credential was revoked or burned: **REVOKED**
 
@@ -93,8 +96,8 @@ Because Credblock stores every issued credential record, fake credentials are re
 Example:
 
 - Issuer issues credential `12345` and Credblock stores it in the DB.
-- Student receives a claim link for `12345`.
-- Employer scans the link → Credblock finds the record and returns ✅ VERIFIED.
+- Student receives a claim request for `12345`.
+- Employer scans the link → Credblock finds the record and returns ✅ VERIFIED with a verified status message.
 - A forged credential `99999` is scanned → Credblock does not find it and returns ⚠️ NOT VERIFIED instantly.
 
 ### For Employers (Verifiers)
@@ -166,9 +169,9 @@ Example:
 
 ### As a Student
 
-1. Receive a claim link from your university
+1. Receive a credential claim request from your university
 2. Connect your wallet
-3. Claim your credential
+3. Claim or decline your credential
 
 ### As a Verifier
 
