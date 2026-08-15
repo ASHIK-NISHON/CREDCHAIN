@@ -14,6 +14,12 @@
   ⚠️ <strong>Status:</strong> Beta Version
 </p>
 
+## 🎥 Walkthrough Video
+
+[![Credblock walkthrough](https://img.youtube.com/vi/N-o0hUY5c0w/0.jpg)](https://youtu.be/N-o0hUY5c0w?si=FJk29mFmpBvSyF8e)
+
+Watch the complete walkthrough of Credblock: https://youtu.be/N-o0hUY5c0w?si=FJk29mFmpBvSyF8e
+
 ---
 
 ## 🎯 What is Credblock?
@@ -29,7 +35,7 @@ Credblock stores every issued credential record in its database, so shared crede
 ### The Problem ❌
 
 - Fake diplomas and unverifiable certificates
-- Slow employer verification processes
+- Slow company/organization verification processes
 - Paper credentials that are lost, altered, or forged
 - Students forced to accept credentials without consent
 
@@ -53,16 +59,20 @@ Credblock stores every issued credential record in its database, so shared crede
 4. **Mint** the credential as an Algorand NFT.
 5. **Store** the issued credential record in Credblock’s database.
 6. **Send** a credential claim request to the student, who can then claim or decline it.
-7. **Revoke / Burn** the credential later if it should no longer be valid.
+7. **Transfer** the credential to the student only after they accept the claim request.
+8. **Revoke / Burn** the credential later if it should no longer be valid.
 
 ### Student Flow
 
 1. **Receive** a credential claim request from the issuer.
 2. **Preview** the credential details before accepting.
-3. **Claim** the credential by connecting your wallet.
-4. **Own** the NFT in your wallet after accepting.
-5. **Decline** the claim if you want to keep it private.
-6. **Share** the verification link or QR code when needed.
+3. **Accept** the claim request so the issuer can transfer the credential to you.
+4. **Claim** the credential by connecting your wallet.
+5. **Own** the NFT in your wallet after accepting.
+6. **Decline** the claim if you want to keep it private.
+7. **Share** the verification link or QR code when needed.
+
+> Note: Every transaction on Algorand requires TestNet ALGO in your wallet, which can be obtained from the Algorand TestNet faucet.
 
 ### Privacy and Control
 
@@ -97,10 +107,10 @@ Example:
 
 - Issuer issues credential `12345` and Credblock stores it in the DB.
 - Student receives a claim request for `12345`.
-- Employer scans the link → Credblock finds the record and returns ✅ VERIFIED with a verified status message.
+- Verifier (company/org) scans the link → Credblock finds the record and returns ✅ VERIFIED with a verified status message.
 - A forged credential `99999` is scanned → Credblock does not find it and returns ⚠️ NOT VERIFIED instantly.
 
-### For Employers (Verifiers)
+### For Verifiers (Companies / Organizations)
 
 1. **Scan** a QR code or click a link
 2. **See** the verification result:
