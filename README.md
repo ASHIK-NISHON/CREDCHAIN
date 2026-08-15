@@ -1,4 +1,4 @@
-# 🚀 Credblock
+# 🚀 CREDBLOCK
 
 ### Verified credentials, privacy control, and instant trust on Algorand
 
